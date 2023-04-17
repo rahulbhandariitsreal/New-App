@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#2D2E2E"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="news"
+            type="com.example.newsapp.model.News" />
+        <variable
+            name="spinnerapdapter"
+            type="android.widget.ArrayAdapter" />
+        <variable
+            name="clickHandlers"
+            type="com.example.newsapp.view.MainActivity.MainActivityClickHandlers" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+        android:id="@+id/swipe_layout"
+        tools:context=".view.MainActivity"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    android:layout_marginTop="15dp">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NV_spinner"
+        android:entries="@array/category"
+        app:adapter="@{spinnerapdapter}"
+android:onItemSelected="@{clickHandlers::onSelectItem}"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/NV_spinner"
+        android:id="@+id/NVrecycler"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        />
+
+
+
+</RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="news"
+            type="com.example.newsapp.model.News" />
+    </data>
+
+
+
+    <LinearLayout
+        android:background="#2F3232"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="1dp">
+              <RelativeLayout
+
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/NVimage"
+        bind:urlToImage="@{news.urlToImage}"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                     android:id="@+id/NVtitle"
+                      android:text="@{news.title}"
+                      android:layout_below="@+id/NVimage"
+                      android:textSize="20sp"
+                      android:textStyle="bold"
+                      android:paddingLeft="10dp"
+                      android:paddingRight="10dp"
+                      android:background="#2F3232"
+                      android:paddingTop="10dp"
+                      />
+
+<!--                  <TextView-->
+<!--                      android:layout_width="match_parent"-->
+<!--                      android:layout_height="wrap_content"-->
+<!--                      android:textSize="15sp"-->
+<!--                      android:paddingLeft="10dp"-->
+<!--                      android:paddingRight="10dp"-->
+<!--                      android:paddingTop="10dp"-->
+<!--                      android:id="@+id/NVdes"-->
+<!--                      android:text="@{news.description}"-->
+<!--                      android:layout_below="@+id/NVtitle"-->
+<!--                      />-->
+
+
+                       </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="api_key">e4f350a68227443aaf9734efa9ca8c94</string>
+
+    <string-array name="category">
+        <item>general</item>
+        <item>health</item>
+        <item>science</item>
+        <item>sports</item>
+        <item>technology</item>
+        <item>business</item>
+        <item>entertainment</item>
+    </string-array>
+
+</resources>
